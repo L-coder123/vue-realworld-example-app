@@ -89,5 +89,4 @@ These can be changed when the contributors reach a consensus.
 ## Connect
 
 Join us on [Discord](https://discord.gg/NE2jNmg)
-
-Trigger deploy
+Hello robot!
