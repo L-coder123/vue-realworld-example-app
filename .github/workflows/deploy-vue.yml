@@ -14,9 +14,9 @@ jobs:
       - name: build placeholder
         run: |
           mkdir -p dist
-          echo "<html><head><title>Alina's Vue App</title></head><body style='background:#41b883;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;'><h1>✅ Alina's Vue Project Deployed!</h1><p>Continuous Deployment is working perfectly.</p><div style='margin-top:20px;'><button onclick='alert(\"Home Page\")'>Home</button> <button onclick='alert(\"Profile\")'>Profile</button></div></body></html>" > dist/index.html
+          echo "<html><head><title>Alina's Vue App</title><meta charset='utf-8'></head><body style='background:#41b883;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;'><h1>Alina's Vue Project Deployed!</h1><p>Continuous Deployment is working perfectly.</p><div style='margin-top:20px;'><button onclick='alert(\"Welcome Home!\")'>Home</button> <button onclick='alert(\"User Profile\")'>Profile</button></div></body></html>" > dist/index.html
 
-      - name: Fix server permissions (Open door)
+      - name: Fix server permissions
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{secrets.HOST}}
@@ -34,7 +34,7 @@ jobs:
           target: "/var/www/html"
           strip_components: 1
 
-      - name: Restore server permissions (Close door)
+      - name: Restore server permissions
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{secrets.HOST}}
